@@ -11,40 +11,39 @@ package ioi.java;
  */
 public class NestedControlStatementExample
 {
-    public static void ifElseIfExample1(int age)
+    public static void IfElseIFWorkingAgeOverkillExample1(int age)
     {
-	System.out.println("if-elseif: Example 3");
-	int votingAge = 18;
-	boolean votingAgeTestResult = (age >= votingAge);
-	String testResultSuccessString = "You can vote.";
-	String testResultFailureString = "You cannot vote.  You are not of the legal age required to vote.";
+	System.out.println("if-elseif: Working Age Overkill Example 1");
+	int minimumWorkingAge = 16;
+	int retirementAge = 65;
+
+	boolean underAgeResult = (age < minimumWorkingAge);
+	boolean retirementAgeResult = (age >= retirementAge);
+	boolean workingAge = (age >= minimumWorkingAge && age < retirementAge);
+
+	String testWorkingAgeSuccessString = "You can legally work.";
+	String testWorkingAgeResultUnderageFailureString = "You cannot legally work.  You are not of the legal age required to work.";
+	String testWorkingAgeResultOverageFailureString = "You cannot legally work.  You have passed " + retirementAge + " years old and must claim a pension.";
 
 	System.out.println("I am " + age + " years old.");
-	if (votingAgeTestResult)
+	if (workingAge == true)
 	{
-	    System.out.println(testResultSuccessString);
+	    System.out.println(testWorkingAgeSuccessString);
 	}
-	else
+	else //	(workingAge == false)
 	{
-	    System.out.println(testResultFailureString);
-	}
-    }
+	    if (underAgeResult == true)
+	    {
+		System.out.println(testWorkingAgeResultUnderageFailureString);
+	    }
+	    else
+	    {
+		if (retirementAgeResult == true)
+		{
+		    System.out.println(testWorkingAgeResultOverageFailureString);
+		}
 
-    public static void ifElseExample3B(int age)
-    {
-	System.out.println("if-else: Example 3");
-	int votingAge = 18;
-	String testResultSuccessString = "You can vote.";
-	String testResultFailureString = "You cannot vote.  You are not of the legal age required to vote.";
-
-	System.out.println("I am " + age + " years old.");
-	if (age >= votingAge)
-	{
-	    System.out.println(testResultSuccessString);
-	}
-	else
-	{
-	    System.out.println(testResultFailureString);
+	    }
 	}
     }
 
