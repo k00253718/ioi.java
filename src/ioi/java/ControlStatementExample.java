@@ -19,14 +19,17 @@ public class ControlStatementExample
     {
 	ifElseExample1();
 	ifElseExample2();
+	ifElseExample3A(16);
+	ifElseExample3A(18);
+	ifElseExample3B(25);
     }
 
     public static void ifElseExample1()
     {
 	System.out.println("if-else: Example 1");
 	boolean testResult = true;
-	String testResultSuccessString = "testResult is true";
-	String testResultFailureString = "testResult is false";
+	String testResultSuccessString = "testResult is true.";
+	String testResultFailureString = "testResult is false.";
 
 	if (testResult)
 	{
@@ -42,8 +45,8 @@ public class ControlStatementExample
     {
 	System.out.println("if-else: Example 2");
 	boolean testResult = false;
-	String testResultSuccessString = "testResult is true";
-	String testResultFailureString = "testResult is false";
+	String testResultSuccessString = "testResult is true.";
+	String testResultFailureString = "testResult is false.";
 
 	if (testResult)
 	{
@@ -55,4 +58,40 @@ public class ControlStatementExample
 	}
     }
 
+    public static void ifElseExample3A(int age)
+    {
+	System.out.println("if-else: Example 3");
+	int votingAge = 18;
+	boolean votingAgeTestResult = (age >= votingAge);
+	String testResultSuccessString = "You can vote.";
+	String testResultFailureString = "You cannot vote.  You are not of the legal age required to vote.";
+
+	System.out.println("I am " + age + " years old.");
+	if (votingAgeTestResult)
+	{
+	    System.out.println(testResultSuccessString);
+	}
+	else
+	{
+	    System.out.println(testResultFailureString);
+	}
+    }
+
+    public static void ifElseExample3B(int age)
+    {
+	System.out.println("if-else: Example 3");
+	int votingAge = 18;
+	String testResultSuccessString = "You can vote.";
+	String testResultFailureString = "You cannot vote.  You are not of the legal age required to vote.";
+
+	System.out.println("I am " + age + " years old.");
+	if (age >= votingAge)
+	{
+	    System.out.println(testResultSuccessString);
+	}
+	else
+	{
+	    System.out.println(testResultFailureString);
+	}
+    }
 }
