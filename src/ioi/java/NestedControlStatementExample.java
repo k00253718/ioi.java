@@ -11,9 +11,10 @@ package ioi.java;
  */
 public class NestedControlStatementExample
 {
+
     public static void IfElseIFWorkingAgeOverkillExample1(int age)
     {
-	System.out.println("if-elseif: Working Age Overkill Example 1");
+	System.out.println("if-elseif: Working Age Overkill Example");
 	int minimumWorkingAge = 16;
 	int retirementAge = 65;
 
@@ -42,9 +43,38 @@ public class NestedControlStatementExample
 		{
 		    System.out.println(testWorkingAgeResultOverageFailureString);
 		}
-
 	    }
 	}
+    }
+
+    public static void IfElseIFWorkingAgeExample2(int age)
+    {
+	System.out.println("if-elseif: Working Age Example");
+	int minimumWorkingAge = 16;
+	int retirementAge = 65;
+
+	boolean underAgeResult = (age < minimumWorkingAge);
+	boolean retirementAgeResult = (age >= retirementAge);
+	boolean workingAge = (age >= minimumWorkingAge && age < retirementAge);
+
+	String testWorkingAgeSuccessString = "You can legally work.";
+	String testWorkingAgeResultUnderageFailureString = "You cannot legally work.  You are not of the legal age required to work.";
+	String testWorkingAgeResultOverageFailureString = "You cannot legally work.  You have passed " + retirementAge + " years old and must claim a pension.";
+
+	System.out.println("I am " + age + " years old.");
+	if (workingAge == true)
+	{
+	    System.out.println(testWorkingAgeSuccessString);
+	}
+	else if (underAgeResult == true)
+	{
+	    System.out.println(testWorkingAgeResultUnderageFailureString);
+	}
+	else if (retirementAgeResult == true)
+	{
+	    System.out.println(testWorkingAgeResultOverageFailureString);
+	}
+
     }
 
     public static void ifElseIfOverkillExample1()
