@@ -27,5 +27,11 @@ public class ApplicationMain
 	NestedControlStatementExample.ifElseIfOverkillExample1();
 	NestedControlStatementExample.ifElseIfOverkillExample2();
 	
+	NestedControlStatementExample.IfElseIFWorkingAgeExample1(18);
+	NestedControlStatementExample.IfElseIFWorkingAgeExample1(15);
+	NestedControlStatementExample.IfElseIFWorkingAgeExample1(16);
+	NestedControlStatementExample.IfElseIFWorkingAgeExample1(64);
+	NestedControlStatementExample.IfElseIFWorkingAgeExample1(65);
+	NestedControlStatementExample.IfElseIFWorkingAgeExample1(90);
     }
 }
